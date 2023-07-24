@@ -1,5 +1,6 @@
 <?php
-include __DIR__ . '/data/products_info.php'
+include __DIR__ . '/data/products_info.php';
+include __DIR__ . '/Models/Products.php';
 ?>
 
 
@@ -20,13 +21,17 @@ include __DIR__ . '/data/products_info.php'
     <ul>
         <div class="container">
             <div class="row g-3">
-                <?php foreach ($products as $product) : ?>
+                <?php foreach ($products as $prod) :
+                    $product = new Products($prod['name'], $prod['price']);
+                    var_dump($product)
+                ?>
                     <div class="col-4 flex-wrap d-flex">
                         <div class="card w-100">
 
                             <li class="list-unstyled">
-                                <img src="<?= $product['url'] ?>" alt="">
-                                <h3><?= $product['name'] ?></h3>
+                                <img src="<?= $prod['url'] ?>" alt="">
+                                <h3><?= $prod['name'] ?></h3>
+                                <span>Prezzo: €<?= $prod['price'] ?></span>
                             </li>
                         </div>
                     </div>

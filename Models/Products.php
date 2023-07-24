@@ -5,7 +5,7 @@ class Products
     public $animal;
     private $price;
 
-    public function __construct($name, $animal, $price)
+    public function __construct($name, $price, $animal = null)
     {
         $this->name = $name;
         $this->animal = $animal;
