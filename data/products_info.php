@@ -2,7 +2,7 @@
 $products = [
     [
         'name' => 'Royal Canin Mini Adult',
-        'url' => 'https://arcaplanet.vtexassets.com/arquivos/ids/243820/royal-canin-size-cane-mini-adult.jpg'
+        'url' => 'https://arcaplanet.vtexassets.com/arquivos/ids/284621/Mini-Adult.jpg?v=1776604270'
     ],
     [
         'name' => 'Almo Nature Holistic Maintenance Medium Large Tonno e Riso',
