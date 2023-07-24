@@ -2,13 +2,15 @@
 class Products
 {
     public $name;
+    public $price;
     public $animal;
-    private $price;
+    public $img_path;
 
-    public function __construct($name, $price, $animal = null)
+    public function __construct($name, $price, $animal, $img_path)
     {
         $this->name = $name;
-        $this->animal = $animal;
         $this->price = $price;
+        $this->animal = $animal;
+        $this->img_path = $img_path;
     }
 }

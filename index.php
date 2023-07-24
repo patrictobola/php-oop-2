@@ -1,6 +1,24 @@
 <?php
 include __DIR__ . '/data/products_info.php';
 include __DIR__ . '/Models/Products.php';
+include __DIR__ . '/Models/Food.php';
+include __DIR__ . '/Models/Toys.php';
+include __DIR__ . '/Models/Accessories.php';
+
+
+$royal_canin = new Food('Royal Canin Mini Adult', '43,99', 'Dog', $prod_urls[0]['url'], '545g', 'Ham, Rice');
+$almo_maintenance = new Food('Almo Nature Holistic Maintenance Medium Large Tonno e Riso', '44,99', 'Dog', $prod_urls[1]['url'], '600g', 'Beef, Cereals');
+$almo_cat = new Food('Almo Nature Cat Daily Lattina', '34,99', 'Cat', $prod_urls[2]['url'], '400g', 'Tuna, Chicken, Ham');
+$guppy_fish = new Food('Mangime per Pesci Guppy in Fiocchi', '2,95', 'Fish', $prod_urls[3]['url'], '30g', 'Fishes, Cereals, Lietis, Alghes');
+$wilma = new Accessories('Voliera Wilma in Legno', '184,99', 'Uccello', $prod_urls[4]['url'], 'Legno', 'L 83 x P 67 x H 153cm');
+$filter = new Accessories('Cartucce Filtranti per Filtro EasyCrystal', '2,29', 'Fish', $prod_urls[5]['url'], 'Materiale Espanso', 'ND');
+$kong_classic = new Toys('Kong Classic', '13,49', 'Doggo', $prod_urls[6]['url'], 'Galleggia e rimbalza', '8,5cm x 10cm');
+$peluche = new Toys('Topini di peluche Trixie', '4,99', 'Catto', $prod_urls[7]['url'], 'Morbido con codina in corda', '8,5cm x 10cm');
+$products = [$royal_canin, $almo_maintenance, $almo_cat, $guppy_fish, $wilma, $filter, $kong_classic, $peluche];
+var_dump($products)
+
+
+
 ?>
 
 
@@ -21,17 +39,15 @@ include __DIR__ . '/Models/Products.php';
     <ul>
         <div class="container">
             <div class="row g-3">
-                <?php foreach ($products as $prod) :
-                    $product = new Products($prod['name'], $prod['price']);
-                    var_dump($product)
+                <?php foreach ($products as $key => $prod) :
                 ?>
                     <div class="col-4 flex-wrap d-flex">
                         <div class="card w-100">
 
                             <li class="list-unstyled">
-                                <img src="<?= $prod['url'] ?>" alt="">
-                                <h3><?= $prod['name'] ?></h3>
-                                <span>Prezzo: €<?= $prod['price'] ?></span>
+                                <img src="<?= $prod->img_path ?>" alt="">
+                                <h3><?= $prod->name ?></h3>
+                                <!-- <span>Prezzo: €<?= $key['price'] ?></span> -->
                             </li>
                         </div>
                     </div>
