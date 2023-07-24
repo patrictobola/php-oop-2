@@ -1,8 +1,8 @@
 <?php
 class Accessories extends Products
 {
-    private $materials;
-    private $dimensions;
+    public $materials;
+    public $dimensions;
 
     public function __construct($name, $price, $animal, $img_path, $materials, $dimensions)
     {

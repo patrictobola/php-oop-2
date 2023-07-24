@@ -1,8 +1,8 @@
 <?php
 class Toys extends Products
 {
-    private $features;
-    private $dimensions;
+    public $features;
+    public $dimensions;
 
     public function __construct($name, $price, $animal, $img_path, $features, $dimensions)
     {

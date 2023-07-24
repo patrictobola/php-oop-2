@@ -1,8 +1,8 @@
 <?php
 class Food extends Products
 {
-    private $weight;
-    private $ingredients;
+    public $weight;
+    public $ingredients;
 
     public function __construct($name, $price, $animal, $img_path, $weight, $ingredients)
     {

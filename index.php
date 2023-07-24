@@ -39,7 +39,7 @@ var_dump($products)
     <ul>
         <div class="container">
             <div class="row g-3">
-                <?php foreach ($products as $key => $prod) :
+                <?php foreach ($products as $prod) :
                 ?>
                     <div class="col-4 flex-wrap d-flex">
                         <div class="card w-100">
@@ -47,7 +47,20 @@ var_dump($products)
                             <li class="list-unstyled">
                                 <img src="<?= $prod->img_path ?>" alt="">
                                 <h3><?= $prod->name ?></h3>
-                                <!-- <span>Prezzo: €<?= $key['price'] ?></span> -->
+                                <h5><?= $prod->animal ?></h5>
+                                <span>Prezzo: €<?= $prod->price ?></span>
+                                <?php if (isset($prod->weight)) : ?>
+                                    <h6>Peso: <?= $prod->weight ?> </h6>
+                                    <h6>Ingredienti <?= $prod->ingredients ?> </h6>
+                                <?php endif ?>
+                                <?php if (isset($prod->features)) : ?>
+                                    <h6>Caratteristiche: <?= $prod->features ?> </h6>
+                                    <h6>Dimensioni <?= $prod->dimensions ?> </h6>
+                                <?php endif ?>
+                                <?php if (isset($prod->materials)) : ?>
+                                    <h6>Materiale: <?= $prod->materials ?> </h6>
+                                    <h6>Dimensioni <?= $prod->dimensions ?> </h6>
+                                <?php endif ?>
                             </li>
                         </div>
                     </div>
